@@ -14,10 +14,14 @@ module.exports = {
         loaders: [
             {
                 test: /\.js?$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 query: {
                     presets: ['react']
                 }
+            },
+            {
+                test: /\.less$/,
+                loader: 'style-loader!css-loader!less-loader'
             }
         ]
     }

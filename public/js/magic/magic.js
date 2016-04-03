@@ -1,6 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+require('../../less/magic/magic.less');//add style
+
 // data
 var data = [];
 for (var i = 1; i < 101; i++) {
