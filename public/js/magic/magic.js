@@ -27,9 +27,9 @@ function getItems() {
 var List = React.createClass({
     render: function() {
         var createItem = function(item) {
-            return <li key={item.id}>{item.text}</li>;
+            return <li className='item' key={item.id}>{item.text}</li>;
         };
-        return <ul>{this.props.items.map(createItem) }</ul>;
+        return <ul className='items'>{this.props.items.map(createItem) }</ul>;
     }
 });
 var ListApp = React.createClass({
@@ -43,10 +43,10 @@ var ListApp = React.createClass({
     },
     render: function() {
         return (
-            <div>
+            <div id='ListApp'>
                 <h1>list</h1>
                 <List items={this.state.items} />
-                <button onClick={this.getMoreItems}>加载更多</button>
+                <button className='btn-more' onClick={this.getMoreItems}>加载更多</button>
             </div>
         );
     }
