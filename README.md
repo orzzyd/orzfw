@@ -1,6 +1,6 @@
 ## 基于Express的练习小Demo，纯属学习+娱乐
 
-### Key Words: Node.js Express ejs React webpack Babel gulp less
+### Key Words: Node.js Express ejs React webpack Babel gulp less ES2015
 
 ### 项目启动：
 1.npm install  
@@ -10,5 +10,5 @@
 5.npm start 浏览器输入localhost:3000  
 
 ### 路由：
-1."/"  
+1."/"  //“hello world”,已重定向到“/magic”  
 2."/magic"  

@@ -3,6 +3,9 @@ var ReactDOM = require('react-dom');
 
 require('../../less/magic/magic.less');//add style
 
+let temp = 2;//test es2015,(new browser support and IE not support)
+console.log(temp);
+
 // data
 var data = [];
 for (var i = 1; i < 101; i++) {
