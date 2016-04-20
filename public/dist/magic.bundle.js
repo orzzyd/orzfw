@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/dist/";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -48,11 +48,7 @@
 
 	var React = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(159);
-
 	__webpack_require__(164); //add style
-
-	var temp = 2; //test es2015,(new browser support and IE not support)
-	console.log(temp);
 
 	// data
 	var data = [];
@@ -108,6 +104,7 @@
 	        return React.createElement(
 	            'div',
 	            { id: 'ListApp' },
+	            React.createElement('img', { src: __webpack_require__(166), alt: 'head', className: 'head' }),
 	            React.createElement(
 	                'h1',
 	                null,
@@ -20125,10 +20122,16 @@
 
 
 	// module
-	exports.push([module.id, "* {\n  margin: 0px;\n  padding: 0px;\n  box-sizing: border-box;\n}\n#ListApp {\n  margin: 50px;\n}\n#ListApp h1 {\n  color: blue;\n}\n#ListApp .items {\n  color: red;\n  list-style: none;\n}\n#ListApp .items .item {\n  margin: 10px 0px;\n}\n#ListApp .btn-more {\n  height: 30px;\n  line-height: 30px;\n  width: 80px;\n  background-color: light-gray;\n  border: none;\n  outline: none;\n}\n", ""]);
+	exports.push([module.id, "* {\n  margin: 0px;\n  padding: 0px;\n  box-sizing: border-box;\n}\n#ListApp {\n  margin: 50px;\n}\n#ListApp h1 {\n  color: blue;\n}\n#ListApp .items {\n  color: red;\n  list-style: none;\n}\n#ListApp .items .item {\n  margin: 10px 0px;\n}\n#ListApp .btn-more {\n  height: 30px;\n  line-height: 30px;\n  width: 80px;\n  background-color: light-gray;\n  border: none;\n  outline: none;\n}\n#ListApp .head {\n  height: 100px;\n  width: 100px;\n  border-radius: 50%;\n  border: solid 2px orange;\n}\n", ""]);
 
 	// exports
 
+
+/***/ },
+/* 166 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "image/magic.df768f20.png";
 
 /***/ }
 /******/ ]);

@@ -1,10 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-
 require('../../less/magic/magic.less');//add style
-
-let temp = 2;//test es2015,(new browser support and IE not support)
-console.log(temp);
 
 // data
 var data = [];
@@ -47,6 +43,7 @@ var ListApp = React.createClass({
     render: function() {
         return (
             <div id='ListApp'>
+                <img src={require('../../image/magic/magic.png')} alt='head' className='head'></img> 
                 <h1>list</h1>
                 <List items={this.state.items} />
                 <button className='btn-more' onClick={this.getMoreItems}>加载更多</button>
