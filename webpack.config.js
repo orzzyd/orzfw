@@ -1,4 +1,5 @@
-var webpack = require('webpack')
+var webpack = require('webpack');
+var htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     // entry: './public/js/index/index.js',
@@ -9,9 +10,25 @@ module.exports = {
     },
     output: {
         publicPath: '/dist/',
-        path: './public/dist/',
-        filename: '[name].bundle.js'
+        path: './public/dist',
+        filename: '[name].bundle.[hash].js'
     },
+    plugins: [
+        new htmlWebpackPlugin({
+            title: 'Hello Magic!',
+            template: './views/magic/magic.html',
+            filename: 'template/magic.html',
+            chunks: ['magic'],
+            inject: 'body'
+        }),
+        new htmlWebpackPlugin({
+            title: 'Hello Index!',
+            template: './views/index/index.html',
+            filename: 'template/index.html',
+            chunks: ['index'],
+            inject: 'body'
+        })
+    ],
     module: {
         loaders: [
             {
@@ -27,7 +44,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loader: 'url-loader?limit=10240&name=image/[name].[hash:8].[ext]' 
+                loader: 'url-loader?limit=10240&name=image/[name].[hash:8].[ext]'
             }
         ]
     }
