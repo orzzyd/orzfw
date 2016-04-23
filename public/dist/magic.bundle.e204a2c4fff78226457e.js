@@ -46,11 +46,82 @@
 
 	'use strict';
 
-	var React = __webpack_require__(2);
-	var ReactDOM = __webpack_require__(159);
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(159);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // var React = require('react');
+	// var ReactDOM = require('react-dom');
+	// require('../../less/magic/magic.less');//add style
+
+	// // data
+	// var data = [];
+	// for (var i = 1; i < 101; i++) {
+	//     var element = {
+	//         id: i,
+	//         text: 'item' + i.toString()
+	//     };
+	//     data.push(element);
+	// }
+	// var index = 0;
+	// var pagesize = 5;
+	// function getItems() {
+	//     var returnData = [];
+	//     for (var i = 0; i < pagesize; i++) {
+	//         returnData.push(data[index]);
+	//         index++;
+	//     }
+	//     return returnData;
+	// }
+	// // data end
+
+	// var List = React.createClass({
+	//     render: function() {
+	//         var createItem = function(item) {
+	//             return <li className='item' key={item.id}>{item.text}</li>;
+	//         };
+	//         return <ul className='items'>{this.props.items.map(createItem) }</ul>;
+	//     }
+	// });
+	// var ListApp = React.createClass({
+	//     getInitialState: function() {
+	//         return { items: getItems() };
+	//     },
+	//     getMoreItems: function() {
+	//         var newItems = getItems();
+	//         var nextItems = this.state.items.concat(newItems);
+	//         this.setState({ items: nextItems });
+	//     },
+	//     render: function() {
+	//         return (
+	//             <div id='ListApp'>
+	//                 <img src={require('../../image/magic/magic.png')} alt='head' className='head'></img>
+	//                 <h1>list</h1>
+	//                 <List items={this.state.items} />
+	//                 <button className='btn-more' onClick={this.getMoreItems}>加载更多</button>
+	//             </div>
+	//         );
+	//     }
+	// });
+	// ReactDOM.render(
+	//     // <h1>Hello, magic!</h1>,
+	//     <ListApp />,
+	//     document.getElementById('list')
+	// );
+
 	__webpack_require__(164); //add style
 
-	// data
+	// ------data------
 	var data = [];
 	for (var i = 1; i < 101; i++) {
 	    var element = {
@@ -69,59 +140,86 @@
 	    }
 	    return returnData;
 	}
-	// data end
+	// ------data end------
 
-	var List = React.createClass({
-	    displayName: 'List',
+	var List = function (_Component) {
+	    _inherits(List, _Component);
 
-	    render: function render() {
-	        var createItem = function createItem(item) {
-	            return React.createElement(
-	                'li',
-	                { className: 'item', key: item.id },
-	                item.text
+	    function List() {
+	        _classCallCheck(this, List);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
+	    }
+
+	    _createClass(List, [{
+	        key: 'render',
+	        value: function render() {
+	            var createItem = function createItem(item) {
+	                return _react2.default.createElement(
+	                    'li',
+	                    { className: 'item', key: item.id },
+	                    item.text
+	                );
+	            };
+	            return _react2.default.createElement(
+	                'ul',
+	                { className: 'items' },
+	                this.props.items.map(createItem)
 	            );
-	        };
-	        return React.createElement(
-	            'ul',
-	            { className: 'items' },
-	            this.props.items.map(createItem)
-	        );
-	    }
-	});
-	var ListApp = React.createClass({
-	    displayName: 'ListApp',
+	        }
+	    }]);
 
-	    getInitialState: function getInitialState() {
-	        return { items: getItems() };
-	    },
-	    getMoreItems: function getMoreItems() {
-	        var newItems = getItems();
-	        var nextItems = this.state.items.concat(newItems);
-	        this.setState({ items: nextItems });
-	    },
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            { id: 'ListApp' },
-	            React.createElement('img', { src: __webpack_require__(166), alt: 'head', className: 'head' }),
-	            React.createElement(
-	                'h1',
-	                null,
-	                'list'
-	            ),
-	            React.createElement(List, { items: this.state.items }),
-	            React.createElement(
-	                'button',
-	                { className: 'btn-more', onClick: this.getMoreItems },
-	                '加载更多'
-	            )
-	        );
+	    return List;
+	}(_react.Component);
+
+	;
+
+	var ListApp = function (_Component2) {
+	    _inherits(ListApp, _Component2);
+
+	    function ListApp(props) {
+	        _classCallCheck(this, ListApp);
+
+	        var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(ListApp).call(this, props));
+
+	        _this2.state = { items: getItems() };
+	        return _this2;
 	    }
-	});
-	ReactDOM.render(
-	// <h1>Hello, magic!</h1>,
-	React.createElement(ListApp, null), document.getElementById('list'));
+
+	    _createClass(ListApp, [{
+	        key: 'getMoreItems',
+	        value: function getMoreItems() {
+	            var newItems = getItems();
+	            var nextItems = this.state.items.concat(newItems);
+	            this.setState({ items: nextItems });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { id: 'ListApp' },
+	                _react2.default.createElement('img', { src: __webpack_require__(166), alt: 'head', className: 'head' }),
+	                _react2.default.createElement(
+	                    'h1',
+	                    null,
+	                    'list'
+	                ),
+	                _react2.default.createElement(List, { items: this.state.items }),
+	                _react2.default.createElement(
+	                    'button',
+	                    { className: 'btn-more', onClick: this.getMoreItems.bind(this) },
+	                    '加载更多'
+	                )
+	            ); //add .bind(this) in ES6
+	        }
+	    }]);
+
+	    return ListApp;
+	}(_react.Component);
+
+	;
+	(0, _reactDom.render)(_react2.default.createElement(ListApp, null), document.getElementById('list'));
 
 /***/ },
 /* 1 */,
